@@ -1,0 +1,32 @@
+[project]
+name = "reconciliation_api"
+version = "0.1.0"
+description = "Reconciliation API"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "prefect",
+    "country_converter",
+    "polars",
+    "alembic",
+    "psycopg[c]", # use psycopg[c] for production, can use psycopg[binary] for development / ci as it's faster
+    "python-dotenv",
+    "watchdog",
+    "pandas"
+]
+
+[project.optional-dependencies]
+dev = [
+    "mypy",
+    "pytest",
+    "ruff",
+    "anybadge",
+    "types-requests"
+]
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
