@@ -1,22 +1,21 @@
-Data Reconciliation Pipeline
+# Data Reconciliation Pipeline
+
 A Python-based data pipeline system designed for monitoring, processing, and reconciling data from multiple sources with a focus on FTP file processing and database operations.
 
-Project Overview
+## Project Overview
+
 This project provides an automated system for:
+- FTP file monitoring and processing
+- Data reconciliation across multiple sources
+- Database operations with SQLAlchemy
+- Asynchronous processing capabilities
+- Docker containerization support
 
-FTP file monitoring and processing
+## Project Structure
 
-Data reconciliation across multiple sources
-
-Database operations with SQLAlchemy
-
-Asynchronous processing capabilities
-
-Docker containerization support
-
-Project Structure
+```
 .
-├── alembic/          # Database migrations
+├── alembic/           # Database migrations
 ├── app/
 │   ├── db/           # Database connections and models
 │   ├── integrations/ # External system integrations
@@ -26,129 +25,134 @@ Project Structure
 │   └── utils/        # Utility functions
 ├── docs/             # Documentation
 └── tests/            # Test suite
+```
 
-Prerequisites
-Python 3.13.2
 
-UV package manager
+## Prerequisites
 
-Docker (for containerized deployment)
+- Python 3.13.2
+- UV package manager
+- Docker (for containerized deployment)
 
-Dependencies
+## Dependencies
+
 Main dependencies:
+- alembic
+- SQLAlchemy
+- pandas
+- numpy
+- PyYAML
+- requests
 
-alembic
+## Installation
 
-SQLAlchemy
-
-pandas
-
-numpy
-
-PyYAML
-
-requests
-
-Installation
-Clone the repository:
-
+1. Clone the repository:
+```shell script
 git clone [repository-url]
+```
 
-Install dependencies:
 
+2. Install dependencies:
+```shell script
 uv install
+```
 
-Configuration
+
+## Configuration
+
 The project uses various configuration files:
+- `alembic.ini` - Database migration configuration
+- `pytest.ini` - Test configuration
+- `mypy.ini` - Type checking configuration
 
-Database migration configuration alembic.ini
+## Development Setup
 
-Test configuration pytest.ini
-
-Type checking configuration mypy.ini
-
-Development Setup
-Create and activate a virtual environment:
-
+1. Create and activate a virtual environment:
+```shell script
 python -m venv venv
 source venv/bin/activate  # Unix
 # or
 .\venv\Scripts\activate  # Windows
+```
 
-Install development dependencies:
 
+2. Install development dependencies:
+```shell script
 uv install
+```
 
-Database Management
+
+## Database Management
+
 Run migrations:
-
+```shell script
 alembic upgrade head
+```
+
 
 Create new migration:
-
+```shell script
 alembic revision -m "description"
+```
 
-Testing
+
+## Testing
+
 Run the test suite:
-
+```shell script
 pytest
+```
 
-Docker Support
+
+## Docker Support
+
 Build the application:
-
+```shell script
 docker build -t reconciliation-pipeline .
+```
 
-Continuous Integration
-The project uses GitLab CI/CD with configurations in for: .gitlab-ci.yml
 
-Automated testing
+## Continuous Integration
 
-Code quality checks
+The project uses GitLab CI/CD with configurations in `.gitlab-ci.yml` for:
+- Automated testing
+- Code quality checks
+- Deployment pipelines
 
-Deployment pipelines
+## Development Guidelines
 
-Development Guidelines
-Use type hints consistently
+1. Use type hints consistently
+2. Follow project structure for new features
+3. Write tests for new functionality
+4. Use UV for package management
+5. Run linting and type checking before commits
 
-Follow project structure for new features
+## Monitoring and Logging
 
-Write tests for new functionality
-
-Use UV for package management
-
-Run linting and type checking before commits
-
-Monitoring and Logging
 The application includes built-in monitoring for:
+- FTP file processing status
+- Data reconciliation results
+- Processing errors and exceptions
 
-FTP file processing status
+## Deployment
 
-Data reconciliation results
+1. Configure environment variables
+2. Run database migrations
+3. Deploy using Docker or direct installation
+4. Monitor logs for processing status
 
-Processing errors and exceptions
+## Contributing
 
-Deployment
-Configure environment variables
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
+4. Ensure tests pass
+5. Follow coding standards
 
-Run database migrations
+## License
 
-Deploy using Docker or direct installation
-
-Monitor logs for processing status
-
-Contributing
-Fork the repository
-
-Create a feature branch
-
-Submit a pull request
-
-Ensure tests pass
-
-Follow coding standards
-
-License
 [Add License Information]
 
-Support
+## Support
+
 [Add Support Contact Information]
